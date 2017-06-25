@@ -48,4 +48,4 @@ class StationSearch extends React.Component {
 
 
 export default StationSearch;
-// Example usage: <StationSearch zip="80220" />
+// Example usage: <StationSearch/>
