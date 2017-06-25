@@ -16,8 +16,16 @@ class StationSearch extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A zipcode was submitted: ' + this.state.value);
     event.preventDefault();
+    return fetch('http://api.wunderground.com/api/' + process.env.REACT_APP_WEATHER_API_KEY + '/geolookup/q/' + this.state.value + '.json')
+        .then((response) => response.json())
+        .then((responseJson) => {
+          console.log(responseJson);
+          return responseJson;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
   }
 
   handleClear(event) {
