@@ -1,0 +1,377 @@
+{
+  "response": {
+    "version": "0.1",
+    "termsofService": "http://www.wunderground.com/weather/api/d/terms.html",
+    "features": {
+      "geolookup": 1
+    }
+  },
+  "location": {
+    "type": "CITY",
+    "country": "US",
+    "country_iso3166": "US",
+    "country_name": "USA",
+    "state": "CO",
+    "city": "Denver",
+    "tz_short": "MDT",
+    "tz_long": "America/Denver",
+    "lat": "39.72999954",
+    "lon": "-104.91999817",
+    "zip": "80220",
+    "magic": "1",
+    "wmo": "99999",
+    "l": "/q/zmw:80220.1.99999",
+    "requesturl": "US/CO/Denver.html",
+    "wuiurl": "https://www.wunderground.com/US/CO/Denver.html",
+    "nearby_weather_stations": {
+      "airport": {
+        "station": [
+          {
+            "city": "Aurora",
+            "state": "CO",
+            "country": "US",
+            "icao": "KBKF",
+            "lat": "39.70000076",
+            "lon": "-104.75000000"
+          },
+          {
+            "city": "Denver Centennial",
+            "state": "CO",
+            "country": "US",
+            "icao": "KAPA",
+            "lat": "39.56999969",
+            "lon": "-104.84999847"
+          },
+          {
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "icao": "KDEN",
+            "lat": "39.86000061",
+            "lon": "-104.66999817"
+          },
+          {
+            "city": "Broomfield",
+            "state": "CO",
+            "country": "US",
+            "icao": "KBJC",
+            "lat": "39.90999985",
+            "lon": "-105.12000275"
+          }
+        ]
+      },
+      "pws": {
+        "station": [
+          {
+            "neighborhood": "Montclair",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE259",
+            "lat": 39.729954,
+            "lon": -104.914246,
+            "distance_km": 0,
+            "distance_mi": 0
+          },
+          {
+            "neighborhood": "Crestmore",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE314",
+            "lat": 39.724319,
+            "lon": -104.916367,
+            "distance_km": 0,
+            "distance_mi": 0
+          },
+          {
+            "neighborhood": "Hale",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE201",
+            "lat": 39.727577,
+            "lon": -104.936836,
+            "distance_km": 1,
+            "distance_mi": 0
+          },
+          {
+            "neighborhood": "Park Hill",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE42",
+            "lat": 39.743778,
+            "lon": -104.911201,
+            "distance_km": 1,
+            "distance_mi": 1
+          },
+          {
+            "neighborhood": "Hilltop",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE173",
+            "lat": 39.714260,
+            "lon": -104.923111,
+            "distance_km": 1,
+            "distance_mi": 1
+          },
+          {
+            "neighborhood": "Congress Park",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE271",
+            "lat": 39.735527,
+            "lon": -104.944565,
+            "distance_km": 2,
+            "distance_mi": 1
+          },
+          {
+            "neighborhood": "Hilltop",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE66",
+            "lat": 39.713310,
+            "lon": -104.933624,
+            "distance_km": 2,
+            "distance_mi": 1
+          },
+          {
+            "neighborhood": "Congress Park",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE129",
+            "lat": 39.733749,
+            "lon": -104.949402,
+            "distance_km": 2,
+            "distance_mi": 1
+          },
+          {
+            "neighborhood": "East",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE134",
+            "lat": 39.720428,
+            "lon": -104.949074,
+            "distance_km": 2,
+            "distance_mi": 1
+          },
+          {
+            "neighborhood": "South City Park",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE369",
+            "lat": 39.742111,
+            "lon": -104.948509,
+            "distance_km": 2,
+            "distance_mi": 1
+          },
+          {
+            "neighborhood": "Lowry",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE149",
+            "lat": 39.724785,
+            "lon": -104.882736,
+            "distance_km": 3,
+            "distance_mi": 1
+          },
+          {
+            "neighborhood": "Stapleton",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE116",
+            "lat": 39.754120,
+            "lon": -104.897560,
+            "distance_km": 3,
+            "distance_mi": 1
+          },
+          {
+            "neighborhood": "Bontanica",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE327",
+            "lat": 39.756920,
+            "lon": -104.899521,
+            "distance_km": 3,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Stapleton",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE196",
+            "lat": 39.751694,
+            "lon": -104.890305,
+            "distance_km": 3,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Stapleton",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE123",
+            "lat": 39.758011,
+            "lon": -104.899635,
+            "distance_km": 3,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Country Club",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE243",
+            "lat": 39.720005,
+            "lon": -104.959892,
+            "distance_km": 3,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Cheesman Park",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE115",
+            "lat": 39.735161,
+            "lon": -104.962387,
+            "distance_km": 3,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Lighthouse at the Breakers",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE317",
+            "lat": 39.702671,
+            "lon": -104.893349,
+            "distance_km": 3,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Belcaro",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE108",
+            "lat": 39.700436,
+            "lon": -104.946991,
+            "distance_km": 4,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Stapleton",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE185",
+            "lat": 39.762169,
+            "lon": -104.898491,
+            "distance_km": 4,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Stapleton",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE125",
+            "lat": 39.760590,
+            "lon": -104.893723,
+            "distance_km": 4,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Bonnie Brae",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE30",
+            "lat": 39.699848,
+            "lon": -104.952003,
+            "distance_km": 4,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Stapleton",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE152",
+            "lat": 39.759701,
+            "lon": -104.884392,
+            "distance_km": 4,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Country Club",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE130",
+            "lat": 39.711746,
+            "lon": -104.968918,
+            "distance_km": 4,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Washington Park East",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE397",
+            "lat": 39.705463,
+            "lon": -104.965019,
+            "distance_km": 4,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Washington Park",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE247",
+            "lat": 39.703159,
+            "lon": -104.963142,
+            "distance_km": 4,
+            "distance_mi": 2
+          },
+          {
+            "neighborhood": "Denver",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE312",
+            "lat": 39.724949,
+            "lon": -104.916351,
+            "distance_km": 0,
+            "distance_mi": 0
+          },
+          {
+            "neighborhood": "Denver",
+            "city": "Denver",
+            "state": "CO",
+            "country": "US",
+            "id": "KCODENVE301",
+            "lat": 39.742802,
+            "lon": -104.953377,
+            "distance_km": 3,
+            "distance_mi": 1
+          }
+        ]
+      }
+    }
+  }
+}

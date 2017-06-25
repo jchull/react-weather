@@ -2,22 +2,16 @@ import React from "react";
 
 class StationListItem extends React.Component {
 
-  constructor(props) {
-    super(props);
-    // TODO: weather station item prop
-  }
-
-
   render() {
 
     return (
-        <div className="station-list-item">
-          Station
-        </div>
+        <li className="station-list-item" key={this.props.station.id}>
+          Station ID: {this.props.station.id}
+        </li>
     );
   }
 }
 
 
 export default StationListItem;
-// Example usage: <StationListItem/>
+// Example usage: <StationListItem station={item} key={item.id}/>

@@ -1,4 +1,5 @@
 import React from "react";
+import StationList from "./station-list";
 
 class StationSearch extends React.Component {
 
@@ -16,11 +17,14 @@ class StationSearch extends React.Component {
   }
 
   handleSubmit(event) {
+    this.setState({
+      isLoading: true
+    });
     event.preventDefault();
     return fetch('http://api.wunderground.com/api/' + process.env.REACT_APP_WEATHER_API_KEY + '/geolookup/q/' + this.state.value + '.json')
         .then((response) => response.json())
         .then((responseJson) => {
-          console.log(responseJson);
+          this.setState({stationList: responseJson.location.nearby_weather_stations.pws.station, isLoading: false});
           return responseJson;
         })
         .catch((error) => {
@@ -35,22 +39,28 @@ class StationSearch extends React.Component {
 
 
   render() {
-
-    return (
-        <div className="station">
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              Zipcode:
-              <input type="text"
-                     value={this.state.value}
-                     onChange={this.handleChange}/>
-            </label>
-            <input type="submit"
-                   value="Submit"/>
-            <button onClick={this.handleClear}>Clear</button>
-          </form>
-        </div>
-    );
+    if (this.state.isLoading) {
+      return (
+          <div className="loading">Loading...</div>
+      );
+    } else {
+      return (
+          <div className="station">
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Zipcode:
+                <input type="text"
+                       value={this.state.value}
+                       onChange={this.handleChange}/>
+              </label>
+              <input type="submit"
+                     value="Submit"/>
+              <button onClick={this.handleClear}>Clear</button>
+              <StationList stations={this.state.stationList}/>
+            </form>
+          </div>
+      );
+    }
   }
 }
 

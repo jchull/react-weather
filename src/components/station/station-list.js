@@ -3,23 +3,20 @@ import StationListItem from "./station-list-item";
 
 class StationList extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-  }
-
-
   render() {
-
+    let stationElements = [];
+    if(this.props.stations){
+      this.props.stations.forEach(item => stationElements.push(<StationListItem station={item} key={item.id}/>))
+    }
     return (
-        <div className="station-list">
-          TODO: add list items
-          <StationListItem></StationListItem>
-        </div>
+        <ul className="station-list">
+          {stationElements}
+        </ul>
     );
   }
 }
 
 
 export default StationList;
-// Example usage: <StationList/>
+// Example usage: <StationList stations={this.state.stationList}/>
+
