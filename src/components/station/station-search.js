@@ -2,12 +2,13 @@ import React from "react";
 
 class StationSearch extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {value: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClear = this.handleClear.bind(this);
   }
 
   handleChange(event) {
@@ -19,6 +20,11 @@ class StationSearch extends React.Component {
     event.preventDefault();
   }
 
+  handleClear(event) {
+    this.setState({value: ""});
+    event.preventDefault();
+  }
+
 
   render() {
 
@@ -27,9 +33,13 @@ class StationSearch extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <label>
               Zipcode:
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
+              <input type="text"
+                     value={this.state.value}
+                     onChange={this.handleChange}/>
             </label>
-            <input type="submit" value="Submit" />
+            <input type="submit"
+                   value="Submit"/>
+            <button onClick={this.handleClear}>Clear</button>
           </form>
         </div>
     );
