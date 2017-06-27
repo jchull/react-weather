@@ -5,9 +5,9 @@ class StationListItem extends React.Component {
   render() {
 
     return (
-        <li className="station-list-item" key={this.props.station.id}>
-          Station ID: {this.props.station.id}
-        </li>
+        <button className="station-list-item">
+          {this.props.station.id}
+        </button>
     );
   }
 }

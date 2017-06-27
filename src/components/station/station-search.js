@@ -1,5 +1,6 @@
 import React from "react";
 import StationList from "./station-list";
+import Forecast from "../forecast/forecast";
 
 class StationSearch extends React.Component {
 
@@ -24,7 +25,10 @@ class StationSearch extends React.Component {
     return fetch('http://api.wunderground.com/api/' + process.env.REACT_APP_WEATHER_API_KEY + '/geolookup/q/' + this.state.value + '.json')
         .then((response) => response.json())
         .then((responseJson) => {
-          this.setState({stationList: responseJson.location.nearby_weather_stations.pws.station, isLoading: false});
+          this.setState({
+            stationList: responseJson.location.nearby_weather_stations.pws.station.slice(0, 5),
+            isLoading: false
+          });
           return responseJson;
         })
         .catch((error) => {
@@ -40,9 +44,10 @@ class StationSearch extends React.Component {
 
   render() {
     if (this.state.isLoading) {
-      return (
-          <div className="loading">Loading...</div>
-      );
+      return null;
+      // return (
+      //     <div className="loading">Loading ...</div>
+      // );
     } else {
       return (
           <div className="station">
@@ -56,7 +61,14 @@ class StationSearch extends React.Component {
               <input type="submit"
                      value="Submit"/>
               <button onClick={this.handleClear}>Clear</button>
-              <StationList stations={this.state.stationList}/>
+              {this.state.stationList ?
+                  <div>
+                    {/* Not showing station list for now, just use first station city
+                    <StationList stations={this.state.stationList}/>*/}
+                    <Forecast station={this.state.stationList[0]}/>
+                  </div>
+                  : <span><br/>Enter zipcode to view weather forecast</span>}
+
             </form>
           </div>
       );

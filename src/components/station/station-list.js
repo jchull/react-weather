@@ -6,12 +6,12 @@ class StationList extends React.Component {
   render() {
     let stationElements = [];
     if(this.props.stations){
-      this.props.stations.forEach(item => stationElements.push(<StationListItem station={item} key={item.id}/>))
+      this.props.stations.forEach(item => stationElements.push(<StationListItem station={item} key={item.id}/>));
     }
     return (
-        <ul className="station-list">
+        <div className="station-list">
           {stationElements}
-        </ul>
+        </div>
     );
   }
 }
