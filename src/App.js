@@ -1,15 +1,15 @@
 import React, {Component} from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import StationSearch from "./components/station/station-search";
+import {QuickZipcodeForecast} from "./components/forecast/quick-zipcode-forecast";
 
 class App extends Component {
   render() {
     return (
-        <div className="App">
-          <div className="App-header">
+        <div className="weather-app">
+          <div className="header">
             <img src={logo}
-                 className="App-logo"
+                 className="logo"
                  alt="logo"/>
             <h2>React Weather</h2>
           </div>
@@ -19,7 +19,7 @@ class App extends Component {
                 <a href="https://www.wunderground.com/weather/api">Weather Underground API</a>
               </div>
               :
-              <StationSearch></StationSearch>
+              <QuickZipcodeForecast/>
           }
         </div>
     );

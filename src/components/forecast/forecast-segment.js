@@ -1,7 +1,6 @@
 import React from "react";
 
-class ForecastDay extends React.Component {
-
+class ForecastSegment extends React.Component {
 
   render() {
     return (
@@ -28,7 +27,7 @@ class ForecastDay extends React.Component {
               </span>
           </div>
           <div>
-            <img src={this.props.forecast.icon_url}/>
+            <img src={this.props.forecast.icon_url} alt={this.props.forecast.conditions}/>
 
           </div>
         </div>
@@ -36,6 +35,6 @@ class ForecastDay extends React.Component {
   }
 }
 
-export default ForecastDay;
-// Example usage: <ForecastDay forecast="{Object}" />
+export {ForecastSegment};
+// Example usage: <ForecastSegment forecast="{Object}" />
 //http://api.wunderground.com/api/Your_Key/geolookup/q/80220.json
