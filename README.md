@@ -1,4 +1,5 @@
-This is a simple project for me to learn about react.
+This is a simple project for me to learn about react. I have created 
+the same application using Angular 2 and ES6 (No Typescript)
 
 
 **Get an API key**
