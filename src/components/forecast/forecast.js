@@ -11,7 +11,7 @@ class Forecast extends React.Component {
     };
   }
 
-  getForecastByStation(station){
+  getForecastByStation(station) {
     if (this.props.station) {
       return fetch('http://api.wunderground.com/api/' + process.env.REACT_APP_WEATHER_API_KEY + '/forecast/q/' + station.state + '/' + station.city + '.json')
           .then((response) => response.json())
@@ -31,18 +31,8 @@ class Forecast extends React.Component {
   render() {
     if (!this.props.station) {
       return null;
-    } else if(!this.state.forecast && !this.state.loading){
+    } else if (!this.state.forecast) {
       this.getForecastByStation(this.props.station);
-    }
-
-
-
-
-
-      if (this.state.isLoading) {
-      return (
-          <span>Loading Forecast...</span>
-      );
     }
 
     let forecastElements = [];
@@ -53,9 +43,7 @@ class Forecast extends React.Component {
     return (
         <div className="forecast">
           <h1>Weather forecast for {this.props.station.city}, {this.props.station.state}</h1>
-          <div>
-            {forecastElements ? forecastElements : <span>Forecast unavailable</span>}
-          </div>
+          {forecastElements ? <div>{forecastElements}</div> : <span>Forecast unavailable</span>}
         </div>
     );
   }

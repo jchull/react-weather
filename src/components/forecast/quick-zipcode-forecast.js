@@ -5,7 +5,7 @@ class QuickZipcodeForecast extends React.Component {
 
   constructor() {
     super();
-    this.state = {value: ''};
+    this.state = {zipcode: ""};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -13,41 +13,42 @@ class QuickZipcodeForecast extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({zipcode: event.target.value});
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    return fetch('http://api.wunderground.com/api/' + process.env.REACT_APP_WEATHER_API_KEY + '/geolookup/q/' + this.state.value + '.json')
-        .then((response) => response.json())
-        .then((responseJson) => {
-          this.setState({
-            station: responseJson.location.nearby_weather_stations.pws.station[0]
+    if (this.state.zipcode) {
+      return fetch("http://api.wunderground.com/api/" + process.env.REACT_APP_WEATHER_API_KEY + "/geolookup/q/" + this.state.zipcode + ".json")
+          .then((response) => response.json())
+          .then((responseJson) => {
+            this.setState({
+              station: responseJson.location.nearby_weather_stations.pws.station[0]
+            });
+            return responseJson;
+          })
+          .catch((error) => {
+            console.error(error);
           });
-          return responseJson;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+    }
   }
 
   handleClear(event) {
-    this.setState({value: ""});
+    this.setState({zipcode: ""});
     event.preventDefault();
   }
 
 
   render() {
     return (
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Zipcode:
-            <input type="text"
-                   value={this.state.value}
-                   onChange={this.handleChange}/>
-          </label>
-          <input type="submit"
-                 value="Submit"/>
+        <form>
+          <label htmlFor="zipcode">Zipcode</label>
+          <input type="text"
+                 name="zipcode"
+                 id="zipcode"
+                 value={this.state.zipcode}
+                 onChange={this.handleChange}/>
+          <button onClick={this.handleSubmit}>Submit</button>
           <button onClick={this.handleClear}>Clear</button>
           <Forecast station={this.state.station}/>
         </form>

@@ -22,3 +22,22 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.forecast-segment {
+  display: inline-block;
+  width: 120px;
+  height: 200px;
+  text-align: center;
+  box-shadow: 1px 1px 1px #ABABAB;
+  margin: 4px;
+}
+
+.segment-header {
+  background-color: #0b6bab;
+  height: 50px;
+  padding: 4px;
+  font-size: 120%;
+  font-weight: 700;
+  color: #FFF;
+}
