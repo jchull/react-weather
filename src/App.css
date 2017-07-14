@@ -14,8 +14,8 @@
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+form {
+  margin: 20px;
 }
 
 @keyframes App-logo-spin {

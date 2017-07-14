@@ -12,3 +12,5 @@ Copy the .env file with name .env.local and change the value of the API key
 `npm install`
 
 `npm start`
+
+![Screenshot](react-weather.png "Screenshot")
