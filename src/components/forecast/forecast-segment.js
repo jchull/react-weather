@@ -18,4 +18,3 @@ class ForecastSegment extends React.Component {
 
 export {ForecastSegment};
 // Example usage: <ForecastSegment forecast="{Object}" />
-//http://api.wunderground.com/api/Your_Key/geolookup/q/80220.json
