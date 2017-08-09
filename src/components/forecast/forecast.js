@@ -1,31 +1,31 @@
 import React from "react";
 
 import {ForecastSegment} from "./forecast-segment";
+import {ForecastService} from "../../services/forecast";
 
 class Forecast extends React.Component {
 
   constructor(props) {
     super(props);
+    this.forecastService = new ForecastService(process.env.REACT_APP_WEATHER_API_KEY);
     this.state = {
       forecast: undefined,
     };
   }
 
   getForecastByStation(station) {
-    if (this.props.station) {
-      return fetch('http://api.wunderground.com/api/' + process.env.REACT_APP_WEATHER_API_KEY + '/forecast/q/' + station.state + '/' + station.city + '.json')
-          .then((response) => response.json())
-          .then((responseJson) => {
-            this.setState({
-              forecast: responseJson.forecast.txt_forecast.forecastday,
-              isLoading: false
-            });
-            return responseJson;
-          })
-          .catch((error) => {
-            console.error(error);
+    return this.forecastService
+        .getForecastByStation(station)
+        .then((forecast) => {
+          this.setState({
+            forecast: forecast.forecastday,
+            isLoading: false
           });
-    }
+          return forecast;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
   };
 
   render() {
