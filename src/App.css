@@ -30,16 +30,18 @@ input, button {
 
 .forecast-segment {
   display: inline-block;
-  width: 120px;
-  height: 200px;
+  width: 140px;
+  height: 240px;
   text-align: center;
   box-shadow: 1px 1px 1px #ABABAB;
-  margin: 4px;
+  margin: 5px;
+  font-size: 80%;
+  overflow: hidden;
 }
 
 .segment-header {
   background-color: #0b6bab;
-  height: 50px;
+  line-height: 40px;
   padding: 4px;
   font-size: 120%;
   font-weight: 700;

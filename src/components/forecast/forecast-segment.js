@@ -11,6 +11,7 @@ class ForecastSegment extends React.Component {
           <div>
             <img src={this.props.forecast.icon_url} alt={this.props.forecast.conditions}/>
           </div>
+          <div className="day-summary">{this.props.forecast.fcttext}</div>
         </div>
     );
   }
