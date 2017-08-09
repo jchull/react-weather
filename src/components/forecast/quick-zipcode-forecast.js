@@ -1,10 +1,12 @@
 import React from "react";
 import {Forecast} from "./forecast";
+import {StationService} from "../../services/station";
 
 class QuickZipcodeForecast extends React.Component {
 
   constructor() {
     super();
+    this.stationService = new StationService(process.env.REACT_APP_WEATHER_API_KEY);
     this.state = {zipcode: ""};
 
     this.handleChange = this.handleChange.bind(this);
@@ -19,17 +21,14 @@ class QuickZipcodeForecast extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     if (this.state.zipcode) {
-      return fetch("http://api.wunderground.com/api/" + process.env.REACT_APP_WEATHER_API_KEY + "/geolookup/q/" + this.state.zipcode + ".json")
-          .then((response) => response.json())
-          .then((responseJson) => {
+      return this.stationService.getNearestStationToZipcode(this.state.zipcode)
+          .then(nearestStation => {
             this.setState({
-              station: responseJson.location.nearby_weather_stations.pws.station[0]
+              station: nearestStation
             });
-            return responseJson;
+            return nearestStation;
           })
-          .catch((error) => {
-            console.error(error);
-          });
+          .catch(console.error);
     }
   }
 
@@ -57,5 +56,5 @@ class QuickZipcodeForecast extends React.Component {
 }
 
 
-export  {QuickZipcodeForecast};
+export {QuickZipcodeForecast};
 // Example usage: <QuickZipcodeForecast/>

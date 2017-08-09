@@ -8,9 +8,7 @@ class ForecastService {
     return fetch(this.BASE_URL + state + '/' + city + '.json')
         .then(response => response.json())
         .then(forecast => forecast.forecast.txt_forecast)
-        .catch(error => {
-          console.error(error);
-        });
+        .catch(console.error);
   };
 
 }
