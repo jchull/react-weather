@@ -15,7 +15,7 @@ class Forecast extends React.Component {
 
   getForecastByStation(station) {
     return this.forecastService
-        .getForecastByStation(station)
+        .getForecastForStateCity(station.state, station.city)
         .then((forecast) => {
           this.setState({
             forecast: forecast.forecastday,
