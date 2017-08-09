@@ -1,6 +1,6 @@
 import React from "react";
 import {Forecast} from "./forecast";
-import {StationService} from "../../services/station";
+import StationService from "../../services/station";
 
 class QuickZipcodeForecast extends React.Component {
 

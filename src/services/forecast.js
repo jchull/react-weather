@@ -1,4 +1,4 @@
-class ForecastService {
+export default class ForecastService {
 
   constructor(api_key) {
     this.forecastUrl = `http://api.wunderground.com/api/${api_key}/forecast/q/`;
@@ -12,5 +12,3 @@ class ForecastService {
   };
 
 }
-
-export {ForecastService}

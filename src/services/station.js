@@ -1,4 +1,4 @@
-class StationService {
+export default class StationService {
 
   constructor(api_key) {
     this.geoLookupUrl = `http://api.wunderground.com/api/${api_key}/geolookup/q/`;
@@ -12,5 +12,3 @@ class StationService {
   };
 
 }
-
-export {StationService}

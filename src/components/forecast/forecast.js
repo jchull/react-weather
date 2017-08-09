@@ -1,7 +1,7 @@
 import React from "react";
 
 import {ForecastSegment} from "./forecast-segment";
-import {ForecastService} from "../../services/forecast";
+import ForecastService from "../../services/forecast";
 
 class Forecast extends React.Component {
 
