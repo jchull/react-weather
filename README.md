@@ -1,5 +1,8 @@
 This is a simple project for me to learn about react. I have created 
-the same application using Angular 2 and ES6 (No Typescript)
+the same application using Angular 2 and ES6 (No Typescript) and also with vue
+
+https://github.com/jchull/ng2-es6-weather
+https://github.com/jchull/vue-weather
 
 
 **Get an API key**
