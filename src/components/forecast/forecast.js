@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import {ForecastSegment} from "./forecast-segment";
-import ForecastService from "../../services/forecast";
+import { ForecastSegment } from './forecast-segment';
+import ForecastService     from '../../services/forecast';
 
 class Forecast extends React.Component {
 
@@ -9,44 +9,39 @@ class Forecast extends React.Component {
     super(props);
     this.forecastService = new ForecastService(process.env.REACT_APP_WEATHER_API_KEY);
     this.state = {
-      forecast: undefined,
+      forecast: undefined
     };
   }
 
+
   getForecastByStation(station) {
     return this.forecastService
-        .getForecastForStateCity(station.state, station.city)
-        .then((forecast) => {
-          this.setState({
-            forecast: forecast.forecastday,
-            isLoading: false
-          });
-          return forecast;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+               .getForecastForStateCity(station.state, station.city)
+               .then((forecast) => {
+                 this.setState({
+                                 forecast: forecast.forecastday,
+                                 isLoading: false
+                               });
+                 return forecast;
+               })
+               .catch(console.error);
   };
 
+
   render() {
-    if (!this.props.station) {
+    if(!this.props.station) {
       return null;
-    } else if (!this.state.forecast) {
+    } else if(!this.state.forecast) {
       this.getForecastByStation(this.props.station);
     }
 
-    let forecastElements = [];
-    if (this.state.forecast)
-      this.state.forecast.forEach(item => forecastElements.push(<ForecastSegment forecast={item}
-                                                                                 key={item.period}/>));
-
-    return (
-        <div className="forecast">
-          <h1>Weather forecast for {this.props.station.city}, {this.props.station.state}</h1>
-          {forecastElements ? <div>{forecastElements}</div> : <span>Forecast unavailable</span>}
-        </div>
-    );
+    let forecastElements = this.state.forecast ? this.state.forecast.map(item => <ForecastSegment forecast={item}
+                                                                                                  key={item.period}/>) : [];
+    return ( <div className="forecast">
+      <h1>Weather forecast for {this.props.station.city}, {this.props.station.state}</h1>
+      {forecastElements ? <div>{forecastElements}</div> : <span>Forecast unavailable</span>}
+    </div> );
   }
 }
 
-export {Forecast};
+export { Forecast };
